@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Empijamate a tu estilo</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+
+    <header>
+
+
+        <div class="logoArea">
+
+            <img src="logo.png">
+
+            <h2>Empijamate</h2>
+
+        </div>
+
+
+        <nav>
+
+            <a href="#inicio">Inicio</a>
+
+            <a href="#destacados">Destacados</a>
+
+            <a href="#tienda">Tienda</a>
+
+        </nav>
+
+
+
+        <div class="carritoBtn" onclick="abrirCarrito()">
+
+            🛒 <span id="contador">0</span>
+
+        </div>
+
+        <button onclick="abrirLogin()">
+
+            Admin
+
+        </button>
+
+    </header>
+
+
+
+    <section id="inicio" class="hero">
+
+        <div>
+
+            <h1>
+
+                Empijamate
+
+            </h1>
+
+            <p>
+
+                Comodidad con estilo
+
+            </p>
+
+            <button onclick="irTienda()">
+
+                Comprar ahora
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="destacados" class="destacados">
+
+        <h2>Más vendidos</h2>
+
+        <div class="destacadosGrid">
+
+            <div>
+
+                Pijama Azul
+
+            </div>
+
+
+            <div>
+
+                Pijama Negra
+
+            </div>
+
+
+            <div>
+
+                Pijama Rosada
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="tienda">
+
+        <h2 class="titulo">
+
+            Tienda
+
+        </h2>
+
+
+        <input id="buscador" placeholder="Buscar..." onkeyup="buscar()">
+
+
+
+        <div id="productos" class="productos">
+
+        </div>
+
+
+    </section>
+
+    <!-- PAGINA PRODUCTO -->
+
+    <div id="productoVista" class="productoVista">
+
+        <div class="productoBox">
+
+            <img id="vistaImg">
+
+            <h2 id="vistaNombre"></h2>
+
+            <p id="vistaDesc"></p>
+
+            <h3 id="vistaPrecio"></h3>
+
+            <p id="vistaStock"></p>
+
+            <button onclick="comprarVista()">
+
+                Agregar al carrito
+
+            </button>
+
+            <button onclick="cerrarVista()">
+
+                Volver
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <footer>
+
+        <div class="footerGrid">
+
+            <div>
+
+                <h3>Empijamate</h3>
+
+                <p>
+                    Comodidad con estilo.
+                </p>
+
+                <p>
+                    Tienda online de pijamas modernas.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Contacto</h3>
+
+                <p>WhatsApp: 3001234567</p>
+
+                <p>Email:</p>
+
+                <p>empijamate@gmail.com</p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Información</h3>
+
+                <p>Pagos con Nequi</p>
+
+                <p>Envíos nacionales</p>
+
+                <p>Pedidos seguros</p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Redes</h3>
+
+                <p>Instagram</p>
+
+                <p>Facebook</p>
+
+                <p>TikTok</p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="footerBottom">
+
+            Empijamate © 2026
+
+        </div>
+
+
+    </footer>
+
+
+
+
+    <div id="carrito" class="carrito">
+
+
+        <h2>Tu carrito</h2>
+
+
+        <ul id="lista"></ul>
+
+
+        <h3 id="total"></h3>
+
+
+        <button onclick="nequi()" class="pagar">
+
+            Pagar Nequi
+
+        </button>
+
+
+
+        <button onclick="cerrarCarrito()" class="cerrar">
+
+            Cerrar
+
+        </button>
+
+
+
+        <h3>Pedidos</h3>
+
+        <ul id="pedidos"></ul>
+
+        <button onclick="aplicarCupon()">
+
+            Aplicar cupón
+
+        </button>
+
+
+    </div>
+
+
+
+
+    <div id="nequiModal" class="modal">
+
+        <div class="modalBox">
+
+            <h2>Pagar con Nequi</h2>
+
+
+            <p>
+
+                Enviar a:
+
+            </p>
+
+
+            <h3>
+
+                3001234567
+
+            </h3>
+
+
+            <p id="totalNequi"></p>
+
+
+            <button onclick="confirmarPago()">
+
+                Ya pagué
+
+            </button>
+
+
+            <button onclick="cerrarNequi()">
+
+                Cancelar
+
+            </button>
+
+
+        </div>
+
+    </div>
+    <!-- LOGIN ADMIN -->
+
+    <div id="loginAdmin" class="modal">
+
+        <div class="modalBox">
+
+            <h2>Administrador</h2>
+
+            <input id="user" placeholder="Usuario">
+
+            <input id="pass" placeholder="Clave" type="password">
+
+            <button onclick="loginAdmin()">
+
+                Entrar
+
+            </button>
+
+            <button onclick="cerrarLogin()">
+
+                Cerrar
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- PANEL ADMIN -->
+
+    <div id="adminPanel" class="modal">
+
+        <div class="modalBox">
+
+            <h2>Panel Admin</h2>
+
+
+            <input id="nombreProducto" placeholder="Nombre">
+
+
+            <input id="precioProducto" placeholder="Precio">
+
+
+            <input id="imagenProducto" placeholder="URL Imagen">
+
+            <input id="stockProducto" placeholder="Stock">
+
+
+            <input id="descProducto" placeholder="Descripción">
+
+
+            <input id="cuponAdmin" placeholder="Crear cupón">
+
+
+            <button onclick="crearCupon()">
+                Crear cupón
+            </button>
+
+
+            <button onclick="agregarProducto()">
+
+                Agregar Producto
+
+            </button>
+
+
+            <button onclick="cerrarAdmin()">
+
+                Cerrar
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="app.js"></script>
+
+
+</body>
+
+</html>

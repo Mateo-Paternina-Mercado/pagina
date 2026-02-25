@@ -1,0 +1,819 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: Segoe UI;
+
+    background: #070012;
+
+    color: white;
+
+}
+
+
+
+/* HEADER */
+
+header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 20px 40px;
+
+    background: #0b001c;
+
+    position: sticky;
+
+    top: 0;
+
+}
+
+
+
+nav a {
+
+    margin: 20px;
+
+    text-decoration: none;
+
+    color: white;
+
+    opacity: .8;
+
+}
+
+
+
+nav a:hover {
+
+    opacity: 1;
+
+}
+
+
+
+.logoArea {
+
+    display: flex;
+
+    gap: 10px;
+
+    align-items: center;
+
+}
+
+
+
+.logoArea img {
+
+    width: 50px;
+
+}
+
+
+
+/* HERO */
+
+.hero {
+
+    height: 80vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+
+        linear-gradient(45deg,
+
+            purple,
+
+            black);
+
+}
+
+
+
+.hero h1 {
+
+    font-size: 60px;
+
+}
+
+
+
+.hero p {
+
+    margin: 20px;
+
+    font-size: 22px;
+
+}
+
+
+
+.hero button {
+
+    padding: 15px 40px;
+
+    border-radius: 30px;
+
+    border: none;
+
+    background: cyan;
+
+    cursor: pointer;
+
+}
+
+
+
+/* DESTACADOS */
+
+.destacados {
+
+    padding: 40px;
+
+    text-align: center;
+
+}
+
+
+
+.destacadosGrid {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+}
+
+
+
+.destacadosGrid div {
+
+    background: #14002e;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+}
+
+
+
+/* TIENDA */
+
+.titulo {
+
+    text-align: center;
+
+    margin: 20px;
+
+}
+
+
+
+#buscador {
+
+    display: block;
+
+    margin: auto;
+
+    padding: 10px;
+
+    width: 300px;
+
+    border-radius: 20px;
+
+    border: none;
+
+}
+
+
+
+.productos {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    padding: 40px;
+
+}
+
+
+
+/* CARDS */
+
+.card {
+
+    background: #14002e;
+
+    width: 230px;
+
+    padding: 15px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+}
+
+
+
+.card img {
+
+    width: 100%;
+
+    border-radius: 10px;
+
+}
+
+
+
+button {
+
+    padding: 10px 20px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+}
+
+
+
+
+/* PANEL CARRITO PRO */
+
+.carrito {
+
+    position: fixed;
+
+    right: -420px;
+
+    top: 0;
+
+    height: 100%;
+
+    width: 380px;
+
+    background:
+
+        linear-gradient(180deg,
+            #0b001c,
+            #050010);
+
+    padding: 30px;
+
+    transition: .5s;
+
+    box-shadow:
+
+        -10px 0 40px rgba(0, 0, 0, 0.8);
+
+    overflow: auto;
+
+    z-index: 50;
+
+}
+
+
+
+.carrito.activo {
+
+    right: 0;
+
+}
+
+
+
+/* TITULO */
+
+.carrito h2 {
+
+    margin-bottom: 20px;
+
+    font-size: 26px;
+
+    color: #00ffff;
+
+}
+
+
+
+/* PRODUCTOS */
+
+#lista li {
+
+    background:
+
+        rgba(255, 255, 255, 0.05);
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    margin-bottom: 10px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+}
+
+
+
+/* TOTAL */
+
+#total {
+
+    margin-top: 15px;
+
+    font-size: 24px;
+
+    color: #00ffff;
+
+    font-weight: bold;
+
+}
+
+
+
+/* BOTONES */
+
+.carrito button {
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 14px;
+
+    font-size: 16px;
+
+    border-radius: 12px;
+
+}
+
+
+
+/* PAGAR */
+
+.pagar {
+
+    background:
+
+        linear-gradient(45deg,
+            #00ffcc,
+            #00ffff);
+
+    color: black;
+
+    font-weight: bold;
+
+}
+
+
+
+/* CUPON */
+
+.carrito button:nth-child(4) {
+
+    background: #14002e;
+
+    color: white;
+
+}
+
+
+
+/* CERRAR */
+
+.cerrar {
+
+    background:
+
+        linear-gradient(45deg,
+            #ff0044,
+            #ff4444);
+
+    color: white;
+
+}
+
+
+
+/* PEDIDOS */
+
+#pedidos {
+
+    margin-top: 20px;
+
+}
+
+
+
+#pedidos li {
+
+    background:
+
+        rgba(255, 255, 255, 0.04);
+
+    padding: 8px;
+
+    border-radius: 8px;
+
+    margin: 5px 0;
+
+    font-size: 13px;
+
+}
+
+
+/* CONTADOR CARRITO */
+
+.carritoBtn {
+
+    background:
+
+        linear-gradient(45deg,
+            #00ffff,
+            #ff00ff);
+
+    padding: 10px 20px;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+
+.carritoBtn:hover {
+
+    transform: scale(1.1);
+
+}
+
+
+
+/* SCROLL BONITO */
+
+.carrito::-webkit-scrollbar {
+
+    width: 6px;
+
+}
+
+
+
+.carrito::-webkit-scrollbar-thumb {
+
+    background: purple;
+
+    border-radius: 10px;
+
+}
+
+
+
+/* MODAL */
+
+.modal {
+
+    position: fixed;
+
+    top: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(0, 0, 0, .8);
+
+}
+
+
+
+.modal.activo {
+
+    display: flex;
+
+}
+
+
+
+.modalBox {
+
+    background: black;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+}
+
+
+
+footer {
+
+    text-align: center;
+
+    padding: 30px;
+
+    opacity: .7;
+
+}
+
+
+.modal input {
+
+    display: block;
+
+    margin: 10px auto;
+
+    padding: 10px;
+
+    width: 200px;
+
+    border-radius: 10px;
+
+    border: none;
+
+}
+
+
+
+header button {
+
+    padding: 8px 15px;
+
+    border-radius: 15px;
+
+    background: #14002e;
+
+    color: white;
+
+}
+
+
+
+/* ANIMACIONES PREMIUM */
+
+.card {
+
+    transition: .4s;
+
+    cursor: pointer;
+
+}
+
+
+
+.card:hover {
+
+    transform:
+
+        translateY(-10px) scale(1.02);
+
+    box-shadow:
+
+        0 20px 40px rgba(255, 0, 255, 0.3);
+
+}
+
+
+
+/* STOCK */
+
+.stock {
+
+    font-size: 13px;
+
+    opacity: .7;
+
+}
+
+
+
+/* PRODUCTO VISTA */
+
+.productoVista {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: black;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 20;
+
+}
+
+
+
+.productoVista.activo {
+
+    display: flex;
+
+}
+
+
+
+.productoBox {
+
+    background: #0b001c;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    width: 400px;
+
+    text-align: center;
+
+    animation: aparecer .4s;
+
+}
+
+
+
+.productoBox img {
+
+    width: 100%;
+
+    border-radius: 15px;
+
+}
+
+
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(.8);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}
+
+
+
+
+/* FOOTER PRO */
+
+footer {
+
+    margin-top: 80px;
+
+    background: #04000a;
+
+    padding: 60px 40px 20px;
+
+    border-top:
+
+        1px solid rgba(255, 255, 255, 0.1);
+
+}
+
+
+
+.footerGrid {
+
+    display: grid;
+
+    grid-template-columns:
+
+        repeat(auto-fit, minmax(200px, 1fr));
+
+    gap: 40px;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+}
+
+
+
+footer h3 {
+
+    margin-bottom: 15px;
+
+    color: #00ffff;
+
+}
+
+
+
+footer p {
+
+    margin: 6px 0;
+
+    opacity: .7;
+
+    font-size: 14px;
+
+}
+
+
+
+footer p:hover {
+
+    opacity: 1;
+
+    cursor: pointer;
+
+}
+
+
+
+.footerBottom {
+
+    text-align: center;
+
+    margin-top: 40px;
+
+    padding-top: 20px;
+
+    border-top:
+
+        1px solid rgba(255, 255, 255, 0.1);
+
+    opacity: .5;
+
+}
+
+
+
+/* CUPONES */
+
+.cupon {
+
+    background: purple;
+
+    padding: 5px 10px;
+
+    border-radius: 10px;
+
+    margin: 5px;
+
+    display: inline-block;
+
+}
