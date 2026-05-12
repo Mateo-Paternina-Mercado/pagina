@@ -454,7 +454,7 @@ if (productosGuardados) {
 
 }
 
-
+// arreglar los stocks para que guarde la informacion en vez de poner undefine
 
 /* AGREGAR PRODUCTO */
 
