@@ -10,7 +10,7 @@ let productos = [
 
         img: "https://i.imgur.com/qP6XKXG.jpg",
 
-        stock: 10,
+        stock: 20,
 
         desc: "Pijama suave y cómoda para dormir"
 
@@ -24,7 +24,7 @@ let productos = [
 
         img: "https://i.imgur.com/ZANVnHE.jpg",
 
-        stock: 8,
+        stock: 20,
 
         desc: "Pijama elegante"
 
@@ -443,7 +443,7 @@ if (productosGuardados) {
 
         img: p.img,
 
-        stock: p.stock || 10,
+        stock: p.stock || 20,
 
         desc: p.desc || "Sin descripción"
 
@@ -454,7 +454,9 @@ if (productosGuardados) {
 
 }
 
-// arreglar los stocks para que guarde la informacion en vez de poner undefine
+// arreglar los stocks para que guarde la informacion en vez de poner undefine.  Si se agrega un punto en el precio no lo tira completo no lo toma como numero entero.
+
+// no actualiza el carrit de compra si no lo vuelves a precionar no esta mandando y recibiendo entrada de datos indefinidamente 
 
 /* AGREGAR PRODUCTO */
 
